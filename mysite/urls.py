@@ -15,8 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from chat import views
 
 urlpatterns = [
+    path('', views.meow, name="root"),
     path('chat/', include('chat.urls')),
     path('admin/', admin.site.urls),
 ]
