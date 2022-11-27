@@ -26,10 +26,10 @@ environ.Env.read_env()
 SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+is_debug = env('DEBUG') == 'yes'
+DEBUG = is_debug
 
-ALLOWED_HOSTS = ['djangoasgi.spinningcube.co.nz', 'purrycat.tk']
-
+ALLOWED_HOSTS = env.list("ALLOWED_HOSTS")
 
 # Application definition
 
